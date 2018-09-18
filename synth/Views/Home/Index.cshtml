@@ -1,0 +1,25 @@
+﻿@model synth.ViewModels.HomeIndexViewModel
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>@Model.CurrentMessage</h1>
+    <table>
+        @foreach (var synthesizer in Model.Synthesizers)
+        {
+        <tr>
+            <td>@synthesizer.Name</td>
+            <td>@synthesizer.Id</td>
+            <td>
+                @*<a href="/home/details/@synthesizer.Id">Details</a>
+                @Html.ActionLink("Go","Details", new { id=synthesizer.Id})*@
+                <a asp-action="Details" asp-route-id="@synthesizer.Id">More</a>
+            </td>
+        </tr>
+        }
+    </table>
+    <a asp-action="Create">Add Synthesizer</a>
+</body>
+</html>

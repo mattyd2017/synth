@@ -1,0 +1,11 @@
+﻿@using synth.Models
+@model Synthesizer
+
+<h1>Create</h1>
+
+<form method="post">
+    <input asp-for="Name"/>
+    <select asp-for="SynthType" asp-items="@Html.GetEnumSelectList<SynthesizerType>()">      
+    </select>
+    <input type="submit" name="save" value="Save" />
+</form>
