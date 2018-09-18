@@ -1,8 +1,9 @@
-﻿using synth.Models;
+﻿using synth.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using synth.Models;
 
 namespace synth.Services
 {
@@ -10,5 +11,6 @@ namespace synth.Services
     {
         IEnumerable<Synthesizer> GetAll();
         Synthesizer Get(int id);
+        Synthesizer Add(Synthesizer synthesizer);
     }
 }

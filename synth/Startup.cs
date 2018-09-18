@@ -20,7 +20,7 @@ namespace synth
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeter, Greeter>();
-            services.AddScoped<ISynthesizerData, InMemeorySynthesizerData>();
+            services.AddSingleton<ISynthesizerData, InMemeorySynthesizerData>();
             services.AddMvc();
         }
 

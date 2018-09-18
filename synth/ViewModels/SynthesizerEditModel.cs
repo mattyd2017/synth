@@ -1,14 +1,13 @@
-﻿using synth.ViewModels;
+﻿using synth.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace synth.Models
+namespace synth.ViewModels
 {
-    public class Synthesizer
+    public class SynthesizerEditModel
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public SynthesizerType SynthType { get; set; }
     }

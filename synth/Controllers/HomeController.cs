@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using synth.Models;
 using synth.Services;
 using synth.ViewModels;
 
@@ -32,9 +33,23 @@ namespace synth.Controllers
             }
             return View(model);
         }
+
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(SynthesizerEditModel model)
+        {
+            var newSynthesizer = new Synthesizer();
+            newSynthesizer.Name = model.Name;
+            newSynthesizer.SynthType = model.SynthType;
+
+            newSynthesizer = _synthesizerData.Add(newSynthesizer);
+
+            return RedirectToAction(nameof(Details), new { id = newSynthesizer.Id});
         }
     }
 }
