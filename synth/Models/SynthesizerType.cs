@@ -7,6 +7,7 @@ namespace synth.Models
 {
     public enum SynthesizerType
     {
+        None,
         Monophonic,
         Polyphonic,
         Duophonic,

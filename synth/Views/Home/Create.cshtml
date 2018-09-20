@@ -4,8 +4,15 @@
 <h1>Create</h1>
 
 <form method="post">
-    <input asp-for="Name"/>
-    <select asp-for="SynthType" asp-items="@Html.GetEnumSelectList<SynthesizerType>()">      
-    </select>
+    <div> 
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="SynthType"></label>
+        <select asp-for="SynthType" asp-items="@Html.GetEnumSelectList<SynthesizerType>()"></select>
+        <span asp-validation-for="SynthType"></span>
+    </div>
     <input type="submit" name="save" value="Save" />
 </form>

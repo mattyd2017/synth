@@ -41,15 +41,24 @@ namespace synth.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(SynthesizerEditModel model)
         {
-            var newSynthesizer = new Synthesizer();
-            newSynthesizer.Name = model.Name;
-            newSynthesizer.SynthType = model.SynthType;
+            if (ModelState.IsValid)
+            {
+                var newSynthesizer = new Synthesizer();
+                newSynthesizer.Name = model.Name;
+                newSynthesizer.SynthType = model.SynthType;
 
-            newSynthesizer = _synthesizerData.Add(newSynthesizer);
+                newSynthesizer = _synthesizerData.Add(newSynthesizer);
 
-            return RedirectToAction(nameof(Details), new { id = newSynthesizer.Id});
+                return RedirectToAction(nameof(Details), new { id = newSynthesizer.Id });
+            }
+            else
+            {
+                return View();
+            }
         }
+
     }
 }
