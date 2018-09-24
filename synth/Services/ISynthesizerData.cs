@@ -12,5 +12,6 @@ namespace synth.Services
         IEnumerable<Synthesizer> GetAll();
         Synthesizer Get(int id);
         Synthesizer Add(Synthesizer synthesizer);
+        Synthesizer Update(Synthesizer synthesizer);
     }
 }

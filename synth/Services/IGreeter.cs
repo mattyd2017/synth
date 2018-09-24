@@ -16,7 +16,7 @@ namespace synth.Services
         }
         public string GetMessageOfTheDay()
         {
-            return "Greetings!!!!!";
+            return "Welcome to mats synthesizer catalog";
         }
     }
 }

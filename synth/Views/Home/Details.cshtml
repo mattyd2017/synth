@@ -1,6 +1,8 @@
-﻿@model synth.Models.Synthesizer
-
-
+﻿@model Synthesizer
+@{
+    ViewBag.Title = Model.Name;
+}
+<div>Details</div>
 <h1>@Model.Name</h1>
 <div>
     ID: @Model.Id
@@ -11,6 +13,7 @@
 <div>
     Type of synthesizer: @Model.SynthType
 </div>
-<div>Details</div>
+
 
 <a asp-action="Index" asp-controller="Home">Home</a>
+@section footer{}

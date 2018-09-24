@@ -1,0 +1,20 @@
+﻿@page "{id}"
+@using synth.Pages.Synthesizers;
+
+@model EditModel
+<h1>Edit @Model.Synthesizer.Name</h1>
+
+<form method="post">
+    <input type="hidden"asp-for="Synthesizer.Id"/>
+    <div>
+        <label asp-for="Synthesizer.Name"></label>
+        <input asp-for="Synthesizer.Name" />
+        <span asp-validation-for="Synthesizer.Name"></span>
+    </div>
+    <div>
+        <label asp-for="Synthesizer.SynthType"></label>
+        <select asp-for="Synthesizer.SynthType" asp-items="@Html.GetEnumSelectList<SynthesizerType>()"></select>
+        <span asp-validation-for="Synthesizer.SynthType"></span>
+    </div>
+    <input type="submit" name="save" value="Save" />
+</form>

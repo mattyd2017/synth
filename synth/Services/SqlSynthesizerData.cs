@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using synth.Data;
 using synth.Models;
 
@@ -30,6 +31,13 @@ namespace synth.Services
         public IEnumerable<Synthesizer> GetAll()
         {
            return  _context.Synthesizers.OrderBy(s => s.Name);
+        }
+
+        public Synthesizer Update(Synthesizer synthesizer)
+        {
+            _context.Attach(synthesizer).State = EntityState.Modified;
+            _context.SaveChanges();
+            return synthesizer;
         }
     }
 }

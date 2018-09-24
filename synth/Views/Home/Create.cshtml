@@ -1,6 +1,9 @@
 ﻿@using synth.Models
 @model Synthesizer
 
+@{ 
+    ViewBag.Title = "Create Synthesizer";
+}
 <h1>Create</h1>
 
 <form method="post">
@@ -16,3 +19,5 @@
     </div>
     <input type="submit" name="save" value="Save" />
 </form>
+@section footer{ 
+}

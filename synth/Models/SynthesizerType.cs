@@ -15,6 +15,7 @@ namespace synth.Models
         Modular,
         Digital,
         Analogue,
+        Virtual_analogue,
      
 
     }
